@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class GameProcedure : Procedure {
 	private static DayorNight currentTimeState;
@@ -11,17 +14,19 @@ public class GameProcedure : Procedure {
 		set{ 
 			if(value == DayorNight.Day)
 			{
-				
+				changeToDay ();
+
 				Debug.Log ("白天");
 			}
 			else{
+				changeToNight ();
 				Debug.Log ("黑夜");
 			}
 			currentTimeState = value;
 		}
 	}
 
-	private Transform currentGameUI;
+	private  Transform currentGameUI;
 		
 	private float dayNightTimeCounter;
 	private float autoIncreaseTimeCounter;
@@ -141,4 +146,17 @@ public class GameProcedure : Procedure {
 		animal.black_species_id = animalInfo.black_species_id;
 		animal.black_species_relationship = animalInfo.black_species_relationship;
 	}
+	static void  changeToDay(){
+		GameObject.Find ("Background").GetComponent<Image> ().DOColor(Color.white,2.5f);
+		if (GameObject.Find ("Tree") == null)
+			return;
+		GameObject.Find ("Tree").GetComponent<Image> ().DOColor(Color.black,2.5f);
+	}
+	static void changeToNight(){
+		GameObject.Find ("Background").GetComponent<Image> ().DOColor(Color.black,2.5f);
+		if (GameObject.Find ("Tree") == null)
+			return;
+		GameObject.Find ("Tree").GetComponent<Image> ().DOColor(Color.white,2.5f);
+	}
+
 }

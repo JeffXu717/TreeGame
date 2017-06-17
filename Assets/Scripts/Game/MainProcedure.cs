@@ -11,6 +11,7 @@ public class MainProcedure : Procedure
 	public override void OnProcedureEnter ()
 	{
 		base.OnProcedureEnter ();
+		Debug.Log (GameController.Instance.level);
 		switch (GameController.Instance.level) {
 		case Level.level1:
 			if (GameController.Instance.Energy >= 100) {

@@ -30,6 +30,11 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 		if (numberText.text != itemAnimal.number.ToString ()) {
 
 			numberText.text = itemAnimal.number.ToString ();
+			if (itemAnimal.number <= 0) {
+				GameController.Instance.currentAnimalDict.Remove (itemAnimal.id);
+				Destroy (gameObject);
+			}
+
 		}
 		if (imageNumber != itemAnimal.picture_id) 
 		{

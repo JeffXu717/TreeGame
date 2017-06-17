@@ -85,10 +85,15 @@
      <Compile Include="Assets\Scripts\Info\AnimalInfo.cs" />
      <Compile Include="Assets\Scripts\Info\TestInfo.cs" />
      <Compile Include="Assets\Scripts\InfoMgr.cs" />
+     <Compile Include="Assets\Scripts\ShowEffect\GeneralShowEffect.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestInfoDemo.cs" />
+     <None Include="Assets\SDKs\DOTween\DOTween50.xml" />
      <None Include="Assets\Resources\Info\TeamMember.txt" />
+     <None Include="Assets\SDKs\DOTween\DOTween46.xml" />
+     <None Include="Assets\SDKs\DOTween\readme.txt" />
      <None Include="Assets\SDKs\JsonFx\Readme.txt" />
+     <None Include="Assets\SDKs\DOTween\DOTween43.xml" />
      <None Include="Assets\SDKs\JsonFx\License.txt" />
      <None Include="Assets\Resources\Info\Animal.txt" />
  <Reference Include="UnityEngine.UI">
@@ -108,6 +113,18 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/baobrogii/Desktop/TreeGame/Assets/SDKs/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/baobrogii/Desktop/TreeGame/Assets/SDKs/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/baobrogii/Desktop/TreeGame/Assets/SDKs/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/baobrogii/Desktop/TreeGame/Assets/SDKs/DOTween/DOTween50.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

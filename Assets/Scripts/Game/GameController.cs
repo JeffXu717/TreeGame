@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour {
 
 			switch (level) {
 			case Level.level1:
-				if (energy < 0 || energy >= 100) {
+				if (energy < 0 || energy >= 100000) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;
