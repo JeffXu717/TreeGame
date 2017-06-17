@@ -41,27 +41,28 @@ public class DragController : MonoBehaviour {
 			_dragitem.tag = "Out";
 			_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 			_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
-
+			_dragitem.GetComponent<Image> ().color = _tsfrom.GetComponent<Image> ().color;
 			Destroy (_tsfrom.gameObject);
 			GameController.Instance.currentAnimalDict.Remove (_tsfrom.GetComponent<DragItem> ().itemAnimal.id);
 
 
 		} else if (_tsin.tag == "Gslot"&&_tsfrom.tag =="Out") {
 
-			if (_tsin.childCount == 0) {
+			if (_tsin.childCount == 1) {
 				if (_tsfrom.GetComponent<DragItem> ().itemAnimal.location == 1) {
 
 					GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin, false);
 					_dragitem.tag = "In";
 					_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 					_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
+					_dragitem.GetComponent<Image> ().color = _tsfrom.GetComponent<Image> ().color;
 					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _dragitem.GetComponent<DragItem> ().itemAnimal);
 					Destroy (_tsfrom.gameObject);
 				}
 			} 
 		
 		} else if (_tsin.tag == "Uslot"&&_tsfrom.tag =="Out") {
-			if (_tsin.childCount == 0) {
+			if (_tsin.childCount == 1) {
 
 				if (_tsfrom.GetComponent<DragItem> ().itemAnimal.location == 2) {
 
@@ -69,6 +70,7 @@ public class DragController : MonoBehaviour {
 					_dragitem.tag = "In";
 					_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 					_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
+					_dragitem.GetComponent<Image> ().color = _tsfrom.GetComponent<Image> ().color;
 					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _dragitem.GetComponent<DragItem> ().itemAnimal);
 					Destroy (_tsfrom.gameObject);
 				}

@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\Info\AnimalInfo.cs" />
      <Compile Include="Assets\Scripts\Info\TestInfo.cs" />
      <Compile Include="Assets\Scripts\InfoMgr.cs" />
+     <Compile Include="Assets\Scripts\ShowEffect\BreatheEffect.cs" />
      <Compile Include="Assets\Scripts\ShowEffect\GeneralShowEffect.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestInfoDemo.cs" />

@@ -148,12 +148,28 @@ public class GameProcedure : Procedure {
 	}
 	static void  changeToDay(){
 		GameObject.Find ("Background").GetComponent<Image> ().DOColor(Color.white,2.5f);
+		foreach (Slot ts in FindObjectsOfType<Slot>()) {
+			ts.GetComponent<Image>().DOColor(Color.white,2.5f);
+			ts.transform.Find("Image").GetComponent<Image>().DOColor(Color.black,2.5f);
+		}
+		foreach (DragItem ts in FindObjectsOfType<DragItem>()) {
+			ts.GetComponent<Image>().DOColor(Color.black,2.5f);
+
+		}
 		if (GameObject.Find ("Tree") == null)
 			return;
 		GameObject.Find ("Tree").GetComponent<Image> ().DOColor(Color.black,2.5f);
+	
 	}
 	static void changeToNight(){
 		GameObject.Find ("Background").GetComponent<Image> ().DOColor(Color.black,2.5f);
+		foreach (Slot ts in FindObjectsOfType<Slot>()) {
+			ts.GetComponent<Image>().DOColor(Color.black,2.5f);
+			ts.transform.Find("Image").GetComponent<Image>().DOColor(Color.white,2.5f);
+		}
+		foreach (DragItem ts in FindObjectsOfType<DragItem>()) {
+			ts.GetComponent<Image>().DOColor(Color.white,2.5f);
+		}
 		if (GameObject.Find ("Tree") == null)
 			return;
 		GameObject.Find ("Tree").GetComponent<Image> ().DOColor(Color.white,2.5f);
