@@ -37,7 +37,7 @@ public class DragController : MonoBehaviour {
 	
 
 		if (_tsin.tag == "Slot") {
-			GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin, false);
+			GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin.Find("AnimalList"), false);
 			_dragitem.tag = "Out";
 			_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 			_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
@@ -55,7 +55,7 @@ public class DragController : MonoBehaviour {
 					_dragitem.tag = "In";
 					_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 					_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
-					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _tsfrom.GetComponent<DragItem> ().itemAnimal);
+					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _dragitem.GetComponent<DragItem> ().itemAnimal);
 					Destroy (_tsfrom.gameObject);
 				}
 			} 
@@ -69,13 +69,26 @@ public class DragController : MonoBehaviour {
 					_dragitem.tag = "In";
 					_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 					_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
-					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _tsfrom.GetComponent<DragItem> ().itemAnimal);
+					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _dragitem.GetComponent<DragItem> ().itemAnimal);
 					Destroy (_tsfrom.gameObject);
 				}
 
 			}
 
+		}else if(_tsin.tag=="In"&&_tsfrom.tag =="Out"){
+			Animal _temp;
+			_temp = _tsfrom.GetComponent<DragItem> ().itemAnimal;
+			_tsfrom.GetComponent<DragItem> ().itemAnimal = _tsin.GetComponent<DragItem> ().itemAnimal;
+			_tsin.GetComponent<DragItem> ().itemAnimal = _temp;
 		}
+
+		else if(_tsin.tag=="Out"&&_tsfrom.tag =="In"){
+			Animal _temp;
+			_temp = _tsfrom.GetComponent<DragItem> ().itemAnimal;
+			_tsfrom.GetComponent<DragItem> ().itemAnimal = _tsin.GetComponent<DragItem> ().itemAnimal;
+			_tsin.GetComponent<DragItem> ().itemAnimal = _temp;
+		}
+			
 
 
 

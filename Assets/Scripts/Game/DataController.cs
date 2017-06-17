@@ -11,8 +11,8 @@ public class DataController : MonoBehaviour {
 		Instance = this;
 		List<int> itemIDList = new List<int> ();
 		itemIDList.Add (4);
-		itemIDList.Add (2);
-		itemIDList.Add (3);
+
+		itemIDList.Add (6);
 
 		levelDict.Add (Level.level1, itemIDList);
 	}
