@@ -10,10 +10,6 @@ namespace WTF.TreeGame.EffectComponent
         //private Animator _animator;
         private Sequence s; 
 
-        public void Start()
-        {
-            StartEffect();
-        }
 
         public override void StartEffect()
         {
@@ -23,9 +19,9 @@ namespace WTF.TreeGame.EffectComponent
             if (s == null)
             {
                 s = DOTween.Sequence();
-                Vector3 tempScale = transform.localScale;
-                s.Append(transform.DOScale(tempScale * 1.05f, 3.3f).SetEase(Ease.OutQuart));
-                s.Append(transform.DOScale(tempScale, 2.7f));
+				Vector3 tempScale = transform.Find("Tree").localScale;
+				s.Append(transform.Find("Tree").DOScale(tempScale * 1.05f, 3.3f).SetEase(Ease.OutQuart));
+				s.Append(transform.Find("Tree").DOScale(tempScale, 2.7f));
                 s.SetLoops(-1);
             }
             else
