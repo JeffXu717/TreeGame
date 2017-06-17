@@ -1,11 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ShowEffect/StartfirstEffect.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="45" Column="39" />
-      <File FileName="Assets/Scripts/Game/MainProcedure.cs" Line="18" Column="8" />
-      <File FileName="Assets/Scripts/Game/GameProcedure.cs" Line="148" Column="3" />
-      <File FileName="Assets/Scripts/Game/Drag/DragItem.cs" Line="35" Column="26" />
+      <File FileName="Assets/Scripts/Game/DataController.cs" Line="19" Column="30" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="51" Column="22" />
+      <File FileName="Assets/Scripts/Game/MainProcedure.cs" Line="37" Column="44" />
+      <File FileName="Assets/Scripts/Game/GameProcedure.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/Game/Drag/DragItem.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/Game/Drag/DragController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ShowEffect/BreatheEffect.cs" Line="15" Column="10" />
+      <File FileName="Assets/Scripts/ShowEffect/GeneralShowEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/ProcedureController.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/ShowEffect/StartfirstEffect.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

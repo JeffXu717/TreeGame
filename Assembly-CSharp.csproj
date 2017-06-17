@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\InfoMgr.cs" />
      <Compile Include="Assets\Scripts\ShowEffect\BreatheEffect.cs" />
      <Compile Include="Assets\Scripts\ShowEffect\GeneralShowEffect.cs" />
+     <Compile Include="Assets\Scripts\ShowEffect\StartfirstEffect.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestInfoDemo.cs" />
      <None Include="Assets\SDKs\DOTween\DOTween50.xml" />

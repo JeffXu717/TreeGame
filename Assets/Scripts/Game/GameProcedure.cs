@@ -26,7 +26,7 @@ public class GameProcedure : Procedure {
 		}
 	}
 
-	private static  Transform currentGameUI;
+	public static  Transform currentGameUI;
 
 	private float dayNightTimeCounter;
 	private float autoIncreaseTimeCounter;
@@ -133,6 +133,8 @@ public class GameProcedure : Procedure {
 		currentGameUI.GetComponent<WTF.TreeGame.EffectComponent.GeneralShowEffect> ().StartEffect ();
 
 
+		GameController.Instance.slider1 = currentGameUI.Find("Line").Find ("Slider1").GetComponent<Slider> ();
+		GameController.Instance.slider2 = currentGameUI.Find("Line").Find ("Slider2").GetComponent<Slider> ();
 
 	}
 
