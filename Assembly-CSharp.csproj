@@ -85,10 +85,16 @@
      <Compile Include="Assets\Scripts\Info\AnimalInfo.cs" />
      <Compile Include="Assets\Scripts\Info\TestInfo.cs" />
      <Compile Include="Assets\Scripts\InfoMgr.cs" />
+     <Compile Include="Assets\Scripts\ShowEffect\BreatheEffect.cs" />
+     <Compile Include="Assets\Scripts\ShowEffect\GeneralShowEffect.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestInfoDemo.cs" />
+     <None Include="Assets\SDKs\DOTween\DOTween50.xml" />
      <None Include="Assets\Resources\Info\TeamMember.txt" />
+     <None Include="Assets\SDKs\DOTween\DOTween46.xml" />
+     <None Include="Assets\SDKs\DOTween\readme.txt" />
      <None Include="Assets\SDKs\JsonFx\Readme.txt" />
+     <None Include="Assets\SDKs\DOTween\DOTween43.xml" />
      <None Include="Assets\SDKs\JsonFx\License.txt" />
      <None Include="Assets\Resources\Info\Animal.txt" />
  <Reference Include="UnityEngine.UI">
