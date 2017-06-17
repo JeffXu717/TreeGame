@@ -11,14 +11,31 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 
 	public static Action<Transform> Onbegindrag;
 	public static Action<Transform,Transform>Onenddrag;
+	[HideInInspector]
+	public int imageNumber;
+	[HideInInspector]
+	public Image image;
+	[HideInInspector]
+	public Text numberText;
 	// Use this for initialization
 	void Start () {
-		
+		image = GetComponent<Image> ();
+
+		numberText = transform.Find ("Text").GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (numberText.text != itemAnimal.number.ToString ()) {
+
+			numberText.text = itemAnimal.number.ToString ();
+		}
+		if (imageNumber != itemAnimal.picture_id) 
+		{
+			imageNumber = itemAnimal.picture_id;
+			image.overrideSprite = (Sprite)Resources.Load ("Image/" + imageNumber);
+		}
 	}
 	public void OnBeginDrag(PointerEventData eventData){
 
