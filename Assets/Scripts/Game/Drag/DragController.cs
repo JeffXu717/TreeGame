@@ -35,24 +35,46 @@ public class DragController : MonoBehaviour {
 	void DragItem_Onenddrag(Transform _tsin,Transform _tsfrom){
 		tempDragitem.Hide ();
 
-		Debug.Log (_tsin.tag);
-		if (_tsin.tag != "Slot") {
-			Debug.Log ("hihihihihi");
-			return;
 
-		}
+		if (_tsin.tag == "Slot") {
+			GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin, false);
+			_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
+			_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
 
-		if (_tsin.childCount == 0) {
+			Destroy (_tsfrom.gameObject);
+			GameController.Instance.currentAnimalDict.Remove (_tsfrom.GetComponent<DragItem> ().itemAnimal.id);
 
-			GameObject _dragitem = Instantiate((GameObject)Resources.Load ("DragItem"),_tsin,false);
-			_dragitem.GetComponent<DragItem>().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
-			_dragitem.GetComponent<Image> ().color = _tsfrom.GetComponent<Image> ().color;
 
-			GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.Name, _tsfrom.GetComponent<DragItem> ().itemAnimal);
+		} else if (_tsin.tag == "Gslot") {
 
-		} else {
+			if (_tsin.childCount == 0) {
+				if (_tsfrom.GetComponent<DragItem> ().itemAnimal.location == "g") {
+
+					GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin, false);
+					_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
+					_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
+					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _tsfrom.GetComponent<DragItem> ().itemAnimal);
+					Destroy (_tsfrom.gameObject);
+				}
+			} 
 		
+		} else if (_tsin.tag == "Uslot") {
+			if (_tsin.childCount == 0) {
+
+				if (_tsfrom.GetComponent<DragItem> ().itemAnimal.location == "u") {
+
+					GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin, false);
+					_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
+					_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
+					GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id, _tsfrom.GetComponent<DragItem> ().itemAnimal);
+					Destroy (_tsfrom.gameObject);
+				}
+
+			}
+
 		}
+
+
 
 	}
 }

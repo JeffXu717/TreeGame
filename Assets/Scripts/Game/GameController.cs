@@ -17,14 +17,14 @@ public class GameController : MonoBehaviour {
 			if (currentAnimalDict.Count == 0) {
 				return temp;
 			} else {
-				foreach (KeyValuePair<string,Animal> anm in currentAnimalDict) {
-					temp += anm.Value.Influence;
+				foreach (KeyValuePair<int,Animal> anm in currentAnimalDict) {
+					temp += anm.Value.growth;
 				}
 				return temp;
 			}
 		}
 	}
-	public Dictionary<string,Animal> currentAnimalDict = new Dictionary<string, Animal> ();
+	public Dictionary<int,Animal> currentAnimalDict = new Dictionary<int, Animal> ();
 
 	private Slider slider;
 	private int energy = 0;

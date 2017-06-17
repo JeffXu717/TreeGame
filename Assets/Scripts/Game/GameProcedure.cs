@@ -20,6 +20,8 @@ public class GameProcedure : Procedure {
 			currentTimeState = value;
 		}
 	}
+
+	private Transform currentGameUI;
 		
 	private float dayNightTimeCounter;
 	private float autoIncreaseTimeCounter;
@@ -33,10 +35,18 @@ public class GameProcedure : Procedure {
 		autoIncreaseTimeCounter = 0;
 		CurrentTimeState = DayorNight.Day;
 
+		GameController.Instance.level = GameController.Instance.level + 1;
+		InitGame ();
+
+		currentGameUI.GetComponent<CanvasGroup> ().alpha = 1;
+		currentGameUI.GetComponent<CanvasGroup> ().blocksRaycasts = true;
 	}
 	public override void OnProcedureExit ()
 	{
 		base.OnProcedureExit ();
+		currentGameUI.GetComponent<CanvasGroup> ().alpha = 0;
+		currentGameUI.GetComponent<CanvasGroup> ().blocksRaycasts = false;
+
 	}
 	public override void OnProcedureUpdate ()
 	{
@@ -66,6 +76,10 @@ public class GameProcedure : Procedure {
 		} else {
 			CurrentTimeState = DayorNight.Day;
 		}
+	}
 
+	void InitGame(){
+
+		currentGameUI = GameObject.Find ("Level1").transform;
 	}
 }
