@@ -39,7 +39,7 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 		if (imageNumber != itemAnimal.picture_id) 
 		{
 			imageNumber = itemAnimal.picture_id;
-			Debug.Log ("?????:" + imageNumber);
+
 
 			Texture2D texture = Resources.Load<Texture2D>("Image/" + imageNumber);
 			Sprite sprite = Sprite.Create(

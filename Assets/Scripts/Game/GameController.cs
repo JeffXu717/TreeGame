@@ -25,9 +25,10 @@ public class GameController : MonoBehaviour {
 		}
 	}
 	public Dictionary<int,Animal> currentAnimalDict = new Dictionary<int, Animal> ();
-
-	private Slider slider1;
-	private Slider slider2;
+	[HideInInspector]
+	public Slider slider1;
+	[HideInInspector]
+	public Slider slider2;
 	private int energy = 0;
 	public  int Energy{
 		
@@ -39,15 +40,15 @@ public class GameController : MonoBehaviour {
 			slider1.value = (float)energy/1000;
 			slider2.value =(float)energy/1000;
 			Debug.Log (energy);
-
+			Debug.Log (GameController.Instance.level);
 			switch (level) {
 			case Level.level1:
-				if (energy < 0 || energy >= 1000) {
+				if (energy < 0 || energy >= 100) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;
 			case Level.level2:
-				if (energy <= 1000 || energy >= 2000) {
+				if (energy <= 100 || energy >= 2000) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;
@@ -64,9 +65,6 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Instance = this;
-		slider1 = GameObject.Find ("Slider1").GetComponent<Slider> ();
-		slider2 = GameObject.Find ("Slider2").GetComponent<Slider> ();
-
 		InfoMgr.Instance.Load ();
 	}
 	

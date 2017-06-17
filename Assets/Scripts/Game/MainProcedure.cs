@@ -4,62 +4,65 @@ using UnityEngine;
 
 public class MainProcedure : Procedure 
 {
-	ProcedureController PC;
+	
 
-	Transform currentUI;
+	Transform currentGameUI;
 
 	public override void OnProcedureEnter ()
 	{
 		base.OnProcedureEnter ();
-		Debug.Log (GameController.Instance.level);
+	
 		switch (GameController.Instance.level) {
 		case Level.level1:
 			if (GameController.Instance.Energy >= 100) {
 			//胜利
+				currentGameUI = GameObject.Find("Level1WinUI").transform;
 			} else {
             //失败
+				currentGameUI = GameObject.Find("LoseUI").transform;
 			}
 			break;
 		case Level.level2:
-			if (GameController.Instance.Energy >= 200) {
+			if (GameController.Instance.Energy >= 2000) {
 				//胜利
+				currentGameUI = GameObject.Find("Level2WinUI").transform;
 			} else {
 				//失败
+				currentGameUI = GameObject.Find("LoseUI").transform;
 			}
 			break;
 		case Level.level3:
-			if (GameController.Instance.Energy >= 300) {
+			if (GameController.Instance.Energy >= 3000) {
 				//胜利
+				currentGameUI = GameObject.Find("Level3WinUI").transform;
 			} else {
 				//失败
+				currentGameUI = GameObject.Find("LoseUI").transform;
 			}
 			break;
 		default:
 			
 			Debug.Log ("开始了");
-			PC = GetComponent<ProcedureController> ();
 
-			currentUI = GameObject.Find ("StartUI").transform;
+
+			currentGameUI = GameObject.Find ("StartUI").transform;
 
 			break;
 		}
-		currentUI.GetComponent<CanvasGroup> ().alpha = 1;
-		currentUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
-		currentUI.SetAsLastSibling ();
+		currentGameUI.GetComponent<CanvasGroup> ().alpha = 1;
+		currentGameUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
+		currentGameUI.SetAsLastSibling ();
+		currentGameUI.GetComponent<WTF.TreeGame.EffectComponent.GeneralShowEffect> ().StartEffect ();
 	}
 	public override void OnProcedureExit ()
 	{
-		currentUI.GetComponent<CanvasGroup> ().alpha = 0;
-        currentUI.GetComponent<CanvasGroup>().blocksRaycasts = false;
+		currentGameUI.GetComponent<CanvasGroup> ().alpha = 0;
+        currentGameUI.GetComponent<CanvasGroup>().blocksRaycasts = false;
 	}
 	public override void OnProcedureUpdate ()
 	{
 		base.OnProcedureUpdate ();
 	}
 
-	public void StartGame(){
-		PC.ChangeProcedure (GetComponent<GameProcedure> ());
-
-	}
 
 }
