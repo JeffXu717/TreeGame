@@ -63,13 +63,39 @@ public class GameProcedure : Procedure {
 
 
 		if (autoIncreaseTimeCounter >= autoIncreaseInterval) {
+			
+			if (GameController.Instance.currentAnimalDict.Count > 1) {
+				foreach (KeyValuePair<int,Animal> kp in GameController.Instance.currentAnimalDict) {
+
+					if (currentTimeState == DayorNight.Day) {
+						
+						for (int i = 0; i < kp.Value.species_id.Count; i++) {
+
+							if (GameController.Instance.currentAnimalDict.ContainsKey (kp.Value.species_id[i])) {
+								
+								kp.Value.number = kp.Value.number + kp.Value.species_relationship [i];
+							}
+
+						}
+
+					}
+					else{
+						for (int i = 0; i < kp.Value.black_species_id.Count; i++) {
+							if (GameController.Instance.currentAnimalDict.ContainsKey (kp.Value.black_species_id[i])) {
+								kp.Value.number = kp.Value.number + kp.Value.black_species_relationship [i];
+							}
+
+						}
+					}
+				}
+			}
+
+
+
 			GameController.Instance.Energy = GameController.Instance.Energy + GameController.Instance.TotalIncrease;
 			autoIncreaseTimeCounter = 0;
 		}
-		if (GameController.Instance.currentAnimalDict.Count > 1) {
-			
-
-		}
+	
 
 
 	}

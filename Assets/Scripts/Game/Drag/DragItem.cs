@@ -34,14 +34,14 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 		if (imageNumber != itemAnimal.picture_id) 
 		{
 			imageNumber = itemAnimal.picture_id;
-
+			Debug.Log ("?????:" + imageNumber);
 
 			Texture2D texture = Resources.Load<Texture2D>("Image/" + imageNumber);
 			Sprite sprite = Sprite.Create(
 				texture,
-				new Rect(0, 0, 100, 100),
-				new Vector2(0.5f, 0.5f));
-			image.sprite = sprite;
+				new Rect(0, 0, texture.width, texture.height),
+				Vector2.one);
+			image.overrideSprite = sprite;
 		}
 	}
 	public void OnBeginDrag(PointerEventData eventData){
