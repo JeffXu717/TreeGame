@@ -14,16 +14,18 @@ namespace WTF.TreeGame.Test
         // Use this for initialization
         void Start()
         {
-            List<TestInfo> list = InfoMgr.Instance.TestInfoList;
-            StringBuilder sb = new StringBuilder();
-            foreach (var item in list)
-            {
-                sb.Append("name : ");
-                sb.Append(item.name);
-                sb.Append("; gender : ");
-                sb.Append(item.gender);
-            }
-            text.text = sb.ToString();
+            //List<TestInfo> list = InfoMgr.Instance.TestInfoList;
+            //StringBuilder sb = new StringBuilder();
+            //foreach (var item in list)
+            //{
+            //    sb.Append("name : ");
+            //    sb.Append(item.name);
+            //    sb.Append("; gender : ");
+            //    sb.Append(item.gender);
+            //}
+            //text.text = sb.ToString();
+            InfoMgr.Instance.Load();
+            Debug.Log(InfoMgr.Instance.IDandAnimalInfoMap[2].species_id.Count);
         }
     }
 }
