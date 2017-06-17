@@ -12,21 +12,21 @@ public class MainProcedure : Procedure
 	{
 		base.OnProcedureEnter ();
 		switch (GameController.Instance.level) {
-		case Level.one:
+		case Level.level1:
 			if (GameController.Instance.Energy >= 100) {
 			//胜利
 			} else {
             //失败
 			}
 			break;
-		case Level.two:
+		case Level.level2:
 			if (GameController.Instance.Energy >= 200) {
 				//胜利
 			} else {
 				//失败
 			}
 			break;
-		case Level.three:
+		case Level.level3:
 			if (GameController.Instance.Energy >= 300) {
 				//胜利
 			} else {
@@ -58,7 +58,7 @@ public class MainProcedure : Procedure
 
 	public void StartGame(){
 		PC.ChangeProcedure (GetComponent<GameProcedure> ());
-		GameController.Instance.level = Level.one;
+
 	}
 
 }

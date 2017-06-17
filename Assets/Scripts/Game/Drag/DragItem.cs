@@ -12,7 +12,7 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 	public static Action<Transform> Onbegindrag;
 	public static Action<Transform,Transform>Onenddrag;
 	[HideInInspector]
-	public int imageNumber;
+	public int imageNumber = 999;
 	[HideInInspector]
 	public Image image;
 	[HideInInspector]
@@ -34,7 +34,14 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 		if (imageNumber != itemAnimal.picture_id) 
 		{
 			imageNumber = itemAnimal.picture_id;
-			image.overrideSprite = (Sprite)Resources.Load ("Image/" + imageNumber);
+
+
+			Texture2D texture = Resources.Load<Texture2D>("Image/" + imageNumber);
+			Sprite sprite = Sprite.Create(
+				texture,
+				new Rect(0, 0, 100, 100),
+				new Vector2(0.5f, 0.5f));
+			image.sprite = sprite;
 		}
 	}
 	public void OnBeginDrag(PointerEventData eventData){

@@ -39,17 +39,17 @@ public class GameController : MonoBehaviour {
 			Debug.Log (energy);
 
 			switch (level) {
-			case Level.one:
+			case Level.level1:
 				if (energy < 0 || energy >= 100) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;
-			case Level.two:
+			case Level.level2:
 				if (energy <= 100 || energy >= 200) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;
-			case Level.three:
+			case Level.level3:
 				if (energy <= 200 || energy >= 300) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}
@@ -63,6 +63,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		Instance = this;
 		slider = GameObject.Find ("Slider").GetComponent<Slider> ();
+		InfoMgr.Instance.Load ();
 	}
 	
 	// Update is called once per frame
