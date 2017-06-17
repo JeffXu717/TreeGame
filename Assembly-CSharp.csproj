@@ -71,6 +71,9 @@
      <Compile Include="Assets\SDKs\JsonFx\XmlDataReader.cs" />
      <Compile Include="Assets\SDKs\JsonFx\XmlDataWriter.cs" />
      <Compile Include="Assets\Scripts\Game\Class\Animal.cs" />
+     <Compile Include="Assets\Scripts\Game\Drag\DragController.cs" />
+     <Compile Include="Assets\Scripts\Game\Drag\DragItem.cs" />
+     <Compile Include="Assets\Scripts\Game\Drag\Slot.cs" />
      <Compile Include="Assets\Scripts\Game\Enum\Enum.cs" />
      <Compile Include="Assets\Scripts\Game\GameController.cs" />
      <Compile Include="Assets\Scripts\Game\GameProcedure.cs" />

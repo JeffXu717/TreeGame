@@ -44,6 +44,7 @@ public class MainProcedure : Procedure
 		}
 		currentUI.GetComponent<CanvasGroup> ().alpha = 1;
 		currentUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
+		currentUI.SetAsLastSibling ();
 	}
 	public override void OnProcedureExit ()
 	{
