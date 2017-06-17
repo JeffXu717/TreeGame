@@ -26,7 +26,8 @@ public class GameController : MonoBehaviour {
 	}
 	public Dictionary<int,Animal> currentAnimalDict = new Dictionary<int, Animal> ();
 
-	private Slider slider;
+	private Slider slider1;
+	private Slider slider2;
 	private int energy = 0;
 	public  int Energy{
 		
@@ -35,7 +36,8 @@ public class GameController : MonoBehaviour {
 		}
 		set{ 
 			energy = value;
-			slider.value  = (float)energy/100;
+			slider1.value = (float)energy/100;
+			slider2.value =(float)energy/100;
 			Debug.Log (energy);
 
 			switch (level) {
@@ -62,7 +64,9 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Instance = this;
-		slider = GameObject.Find ("Slider").GetComponent<Slider> ();
+		slider1 = GameObject.Find ("Slider1").GetComponent<Slider> ();
+		slider2 = GameObject.Find ("Slider2").GetComponent<Slider> ();
+
 		InfoMgr.Instance.Load ();
 	}
 	

@@ -37,7 +37,7 @@ public class DragController : MonoBehaviour {
 	
 
 		if (_tsin.tag == "Slot") {
-			GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin, false);
+			GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"), _tsin.Find("AnimalList"), false);
 			_dragitem.tag = "Out";
 			_dragitem.GetComponent<DragItem> ().itemAnimal = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 			_dragitem.GetComponent<Image> ().overrideSprite = _tsfrom.GetComponent<Image> ().overrideSprite;
