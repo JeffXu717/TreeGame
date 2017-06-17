@@ -71,6 +71,7 @@
      <Compile Include="Assets\SDKs\JsonFx\XmlDataReader.cs" />
      <Compile Include="Assets\SDKs\JsonFx\XmlDataWriter.cs" />
      <Compile Include="Assets\Scripts\Game\Class\Animal.cs" />
+     <Compile Include="Assets\Scripts\Game\DataController.cs" />
      <Compile Include="Assets\Scripts\Game\Drag\DragController.cs" />
      <Compile Include="Assets\Scripts\Game\Drag\DragItem.cs" />
      <Compile Include="Assets\Scripts\Game\Drag\Slot.cs" />
@@ -80,6 +81,8 @@
      <Compile Include="Assets\Scripts\Game\MainProcedure.cs" />
      <Compile Include="Assets\Scripts\Game\Procedure.cs" />
      <Compile Include="Assets\Scripts\Game\ProcedureController.cs" />
+     <Compile Include="Assets\Scripts\Info\AniamlInfoAnalized.cs" />
+     <Compile Include="Assets\Scripts\Info\AnimalInfo.cs" />
      <Compile Include="Assets\Scripts\Info\TestInfo.cs" />
      <Compile Include="Assets\Scripts\InfoMgr.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
@@ -87,6 +90,7 @@
      <None Include="Assets\Resources\Info\TeamMember.txt" />
      <None Include="Assets\SDKs\JsonFx\Readme.txt" />
      <None Include="Assets\SDKs\JsonFx\License.txt" />
+     <None Include="Assets\Resources\Info\Animal.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

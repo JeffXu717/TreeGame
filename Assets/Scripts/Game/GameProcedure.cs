@@ -47,14 +47,12 @@ public class GameProcedure : Procedure {
 		currentGameUI.GetComponent<CanvasGroup> ().alpha = 0;
 		currentGameUI.GetComponent<CanvasGroup> ().blocksRaycasts = false;
 
+		GameController.Instance.currentAnimalDict.Clear ();
+
 	}
 	public override void OnProcedureUpdate ()
 	{
 		base.OnProcedureUpdate ();
-
-
-
-
 
 		dayNightTimeCounter += Time.deltaTime;
 		autoIncreaseTimeCounter += Time.deltaTime;
@@ -68,6 +66,11 @@ public class GameProcedure : Procedure {
 			GameController.Instance.Energy = GameController.Instance.Energy + GameController.Instance.TotalIncrease;
 			autoIncreaseTimeCounter = 0;
 		}
+		if (GameController.Instance.currentAnimalDict.Count > 1) {
+			
+
+		}
+
 
 	}
 	void changeTimeState(){
@@ -80,6 +83,36 @@ public class GameProcedure : Procedure {
 
 	void InitGame(){
 
-		currentGameUI = GameObject.Find ("Level1").transform;
+		currentGameUI = GameObject.Find (GameController.Instance.level.ToString()).transform;
+
+		Transform itemList = currentGameUI.transform.Find ("Scroll").Find ("AnimalList");
+		List<int> _itemlist;
+		DataController.Instance.levelDict.TryGetValue (GameController.Instance.level,out _itemlist);
+		foreach (int id in _itemlist) {
+			GameObject _dragitem = Instantiate ((GameObject)Resources.Load ("DragItem"),itemList, false);
+			_dragitem.tag = "Out";
+
+			WTF.TreeGame.Info.AnimalInfoAnalized aia;
+			InfoMgr.Instance.IDandAnimalInfoMap.TryGetValue (id, out aia);
+
+			InitInfo(_dragitem.GetComponent<DragItem> ().itemAnimal,aia);
+		}
+
+
+
+
+
+	}
+
+	void InitInfo(Animal animal,WTF.TreeGame.Info.AnimalInfoAnalized animalInfo){
+		animal.name = animalInfo.name;
+		animal.id = animalInfo.id;
+		animal.picture_id =animalInfo.picture_id;
+		animal.number = animalInfo.number;
+		animal.location = animalInfo.location;
+		animal.species_id = animalInfo.species_id;
+		animal.species_relationship = animalInfo.species_relationship;
+		animal.black_species_id = animalInfo.black_species_id;
+		animal.black_species_relationship = animalInfo.black_species_relationship;
 	}
 }

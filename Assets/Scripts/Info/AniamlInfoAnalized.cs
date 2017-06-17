@@ -8,7 +8,8 @@ namespace WTF.TreeGame.Info
         public string name;
         public int picture_id;
         public int number;
-        public string location;
+        public int location;
+		public int growth;
         public List<int> species_id;
         public List<int> species_relationship;
         public List<int> black_species_id;
@@ -21,6 +22,7 @@ namespace WTF.TreeGame.Info
             picture_id = animalInfoInstance.picture_id;
             number = animalInfoInstance.number;
             location = animalInfoInstance.location;
+			growth = animalInfoInstance.growth;
         }
     }
 }

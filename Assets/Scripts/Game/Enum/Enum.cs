@@ -2,9 +2,9 @@
 public enum Level
 { 
 	zero = 0,
-	one = 1, 
-	two = 2,  
-	three = 3,  
+	level1 = 1, 
+	level2 = 2,  
+	level3 = 3,  
 }
 
 public enum DayorNight{
