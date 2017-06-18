@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using DG.Tweening;
 
 public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHandler {
 	
@@ -31,8 +32,12 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 
 			numberText.text = itemAnimal.number.ToString ();
 			if (itemAnimal.number <= 0) {
+
 				GameController.Instance.currentAnimalDict.Remove (itemAnimal.id);
-				Destroy (gameObject);
+				gameObject.transform.DOScale (0, 1).SetEase (Ease.InBack).OnComplete (() => {
+
+					Destroy (gameObject);
+				});
 			}
 
 		}

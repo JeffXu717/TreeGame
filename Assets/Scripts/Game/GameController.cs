@@ -37,18 +37,18 @@ public class GameController : MonoBehaviour {
 		}
 		set{ 
 			energy = value;
-			slider1.value = (float)energy/1000;
-			slider2.value =(float)energy/1000;
+			slider1.value = ((float)energy%1000)/1000;
+			slider2.value =((float)energy%1000)/1000;
 			Debug.Log (energy);
 			Debug.Log (GameController.Instance.level);
 			switch (level) {
 			case Level.level1:
-				if (energy < 0 || energy >= 100) {
+				if (energy < 0 || energy >= 1000) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;
 			case Level.level2:
-				if (energy <= 100 || energy >= 2000) {
+				if (energy <= 1000 || energy >= 2000) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;

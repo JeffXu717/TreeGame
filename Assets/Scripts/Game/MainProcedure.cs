@@ -14,7 +14,7 @@ public class MainProcedure : Procedure
 	
 		switch (GameController.Instance.level) {
 		case Level.level1:
-			if (GameController.Instance.Energy >= 100) {
+			if (GameController.Instance.Energy >= 1000) {
 			//胜利
 				currentGameUI = GameObject.Find("Level1WinUI").transform;
 			} else {
