@@ -11,7 +11,7 @@ public class ProcedureController : MonoBehaviour {
 		}
 	}
 	
-	Procedure currentProcedure;
+	public	Procedure currentProcedure;
 
 
 	// Use this for initialization

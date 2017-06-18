@@ -18,11 +18,13 @@ public class GameController : MonoBehaviour {
 		get{ 
 			int temp = 1;
 			if (currentAnimalDict.Count == 0) {
+				temp = temp + enviromentIncrease;
 				return temp;
 			} else {
 				foreach (KeyValuePair<int,Animal> anm in currentAnimalDict) {
 					temp += anm.Value.growth;
 				}
+				temp = temp + enviromentIncrease;
 				return temp;
 			}
 		}
@@ -32,6 +34,7 @@ public class GameController : MonoBehaviour {
 	public Slider slider1;
 	[HideInInspector]
 	public Slider slider2;
+	public int enviromentIncrease = 0;
 	private int energy = 0;
 	public  int Energy{
 		
@@ -40,18 +43,25 @@ public class GameController : MonoBehaviour {
 		}
 		set{ 
 			energy = value;
-			slider1.value = (float)energy/1000;
-			slider2.value =(float)energy/1000;
+			slider1.value = ((float)energy%1000)/1000;
+			slider2.value =((float)energy%1000)/1000;
 			Debug.Log (energy);
-			Debug.Log (GameController.Instance.level);
 			switch (level) {
 			case Level.level1:
-				if (energy < 0 || energy >= 100) {
+				if (energy < 0 || energy >= 1000) {
+					GameObject.Find("StormEventUI").GetComponent<EventClass>().ExitEvent();
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
+				else if(energy>100){
+					
+					if (GameObject.Find ("StormEventUI").GetComponent<EventClass> ().isTrigger == false) {
+						
+						GameObject.Find("StormEventUI").GetComponent<EventClass>().EnterEvent();
+					}
+				}
 				break;
 			case Level.level2:
-				if (energy <= 100 || energy >= 2000) {
+				if (energy <= 1000 || energy >= 2000) {
 					ProcedureController.Instance.ChangeProcedure (GetComponent<MainProcedure>());
 				}	
 				break;

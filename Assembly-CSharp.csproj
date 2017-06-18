@@ -46,6 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BirdFly.cs" />
+     <Compile Include="Assets\DropWater.cs" />
+     <Compile Include="Assets\Fire.cs" />
      <Compile Include="Assets\SDKs\JsonFx\About.cs" />
      <Compile Include="Assets\SDKs\JsonFx\DataReaderProvider.cs" />
      <Compile Include="Assets\SDKs\JsonFx\DataWriterProvider.cs" />
@@ -76,11 +79,14 @@
      <Compile Include="Assets\Scripts\Game\Drag\DragItem.cs" />
      <Compile Include="Assets\Scripts\Game\Drag\Slot.cs" />
      <Compile Include="Assets\Scripts\Game\Enum\Enum.cs" />
+     <Compile Include="Assets\Scripts\Game\EventClass.cs" />
      <Compile Include="Assets\Scripts\Game\GameController.cs" />
      <Compile Include="Assets\Scripts\Game\GameProcedure.cs" />
+     <Compile Include="Assets\Scripts\Game\InsectEvent.cs" />
      <Compile Include="Assets\Scripts\Game\MainProcedure.cs" />
      <Compile Include="Assets\Scripts\Game\Procedure.cs" />
      <Compile Include="Assets\Scripts\Game\ProcedureController.cs" />
+     <Compile Include="Assets\Scripts\Game\StormEvent.cs" />
      <Compile Include="Assets\Scripts\Info\AniamlInfoAnalized.cs" />
      <Compile Include="Assets\Scripts\Info\AnimalInfo.cs" />
      <Compile Include="Assets\Scripts\Info\TestInfo.cs" />

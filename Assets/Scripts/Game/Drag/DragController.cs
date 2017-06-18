@@ -81,14 +81,20 @@ public class DragController : MonoBehaviour {
 			Animal _temp;
 			_temp = _tsfrom.GetComponent<DragItem> ().itemAnimal;
 			_tsfrom.GetComponent<DragItem> ().itemAnimal = _tsin.GetComponent<DragItem> ().itemAnimal;
+			GameController.Instance.currentAnimalDict.Remove (_tsin.GetComponent<DragItem> ().itemAnimal.id);
+
 			_tsin.GetComponent<DragItem> ().itemAnimal = _temp;
+			GameController.Instance.currentAnimalDict.Add (_tsin.GetComponent<DragItem> ().itemAnimal.id,_tsin.GetComponent<DragItem> ().itemAnimal);
 		}
 
 		else if(_tsin.tag=="Out"&&_tsfrom.tag =="In"){
 			Animal _temp;
 			_temp = _tsfrom.GetComponent<DragItem> ().itemAnimal;
+			GameController.Instance.currentAnimalDict.Remove (_tsfrom.GetComponent<DragItem> ().itemAnimal.id);
 			_tsfrom.GetComponent<DragItem> ().itemAnimal = _tsin.GetComponent<DragItem> ().itemAnimal;
+			GameController.Instance.currentAnimalDict.Add (_tsfrom.GetComponent<DragItem> ().itemAnimal.id,_tsfrom.GetComponent<DragItem> ().itemAnimal);
 			_tsin.GetComponent<DragItem> ().itemAnimal = _temp;
+
 		}
 			
 

@@ -31,7 +31,7 @@ public class GameProcedure : Procedure {
 	private float dayNightTimeCounter;
 	private float autoIncreaseTimeCounter;
 	public int DayNightInterval = 5;
-	public int autoIncreaseInterval = 1;
+	public float autoIncreaseInterval = 1;
 
 	public override void OnProcedureEnter ()
 	{
@@ -55,9 +55,14 @@ public class GameProcedure : Procedure {
 
 		GameController.Instance.currentAnimalDict.Clear ();
 
+		GameController.Instance.enviromentIncrease = 0;
 	}
 	public override void OnProcedureUpdate ()
 	{
+		if (isPause) {
+			return;
+		}
+
 		base.OnProcedureUpdate ();
 
 		dayNightTimeCounter += Time.deltaTime;
@@ -148,6 +153,7 @@ public class GameProcedure : Procedure {
 		animal.species_relationship = animalInfo.species_relationship;
 		animal.black_species_id = animalInfo.black_species_id;
 		animal.black_species_relationship = animalInfo.black_species_relationship;
+		animal.growth = animalInfo.growth;
 	}
 	static void  changeToDay(){
 		GameObject.Find ("BackImage").GetComponent<Image> ().DOColor(Color.white,2.5f);
