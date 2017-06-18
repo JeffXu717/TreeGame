@@ -18,9 +18,12 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 	public Image image;
 	[HideInInspector]
 	public Text numberText;
+
+    private UIEffect _uiEffect;
 	// Use this for initialization
 	void Start () {
 		image = GetComponent<Image> ();
+        _uiEffect = GetComponent<UIEffect>();
 
 		numberText = transform.Find ("Text").GetComponent<Text> ();
 	}
@@ -28,7 +31,19 @@ public class DragItem : MonoBehaviour,IBeginDragHandler,IEndDragHandler,IDragHan
 	// Update is called once per frame
 	void Update () {
 
-		if (numberText.text != itemAnimal.number.ToString ()) {
+        if (tag == "Out")
+            return;
+
+        if (numberText.text != itemAnimal.number.ToString ()) {
+            
+            int selfNumber = int.Parse(numberText.text);
+            int animalNumber = int.Parse(itemAnimal.number.ToString());
+            _uiEffect.enabled = true;
+
+            if (selfNumber > animalNumber)
+                _uiEffect.shadowColor = Color.red;
+            else
+                _uiEffect.shadowColor = Color.green;
 
 			numberText.text = itemAnimal.number.ToString ();
 			if (itemAnimal.number <= 0) {

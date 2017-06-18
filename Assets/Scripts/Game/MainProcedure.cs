@@ -12,6 +12,7 @@ public class MainProcedure : Procedure
 	{
 		base.OnProcedureEnter ();
 	
+<<<<<<< HEAD
 		switch (GameController.Instance.level) {
 		case Level.level1:
 			if (GameController.Instance.Energy >= 1000) {
@@ -43,12 +44,64 @@ public class MainProcedure : Procedure
 		default:
 			
 			Debug.Log ("开始了");
+=======
+        if (GameController.Instance.IsFromCover)
+        {
+            currentGameUI = GameObject.Find("StartUI").transform;
+            GameController.Instance.IsFromCover = false;
+        }
+        else
+        {
+            switch (GameController.Instance.level)
+            {
+                case Level.level1:
+                    if (GameController.Instance.Energy >= 100)
+                    {
+                        //胜利
+                        currentGameUI = GameObject.Find("Level1WinUI").transform;
+                    }
+                    else
+                    {
+                        //失败
+                        currentGameUI = GameObject.Find("LoseUI").transform;
+                    }
+                    break;
+                case Level.level2:
+                    if (GameController.Instance.Energy >= 2000)
+                    {
+                        //胜利
+                        currentGameUI = GameObject.Find("Level2WinUI").transform;
+                    }
+                    else
+                    {
+                        //失败
+                        currentGameUI = GameObject.Find("LoseUI").transform;
+                    }
+                    break;
+                case Level.level3:
+                    if (GameController.Instance.Energy >= 3000)
+                    {
+                        //胜利
+                        currentGameUI = GameObject.Find("Level3WinUI").transform;
+                    }
+                    else
+                    {
+                        //失败
+                        currentGameUI = GameObject.Find("LoseUI").transform;
+                    }
+                    break;
+                default:
+>>>>>>> JeffXu717/master
+
+                    Debug.Log("开始了");
 
 
-			currentGameUI = GameObject.Find ("StartUI").transform;
+                    currentGameUI = GameObject.Find("CoverUI").transform;
 
-			break;
-		}
+                    break;
+            }
+        }
+		
 		currentGameUI.GetComponent<CanvasGroup> ().alpha = 1;
 		currentGameUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
 		currentGameUI.SetAsLastSibling ();

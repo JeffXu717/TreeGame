@@ -33,4 +33,12 @@ public class ProcedureController : MonoBehaviour {
 		currentProcedure.OnProcedureEnter ();
 
 	}
+
+    public void ChangeProcedureFromCover()
+    {
+        //JeffXu
+        //通过封面进入第一关的动画阶段
+        GameController.Instance.IsFromCover = true;
+        ChangeProcedure (GameObject.Find("GameController").GetComponent<MainProcedure>());
+    }
 }
