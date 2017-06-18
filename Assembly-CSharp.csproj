@@ -83,7 +83,6 @@
      <Compile Include="Assets\Scripts\Game\GameController.cs" />
      <Compile Include="Assets\Scripts\Game\GameProcedure.cs" />
      <Compile Include="Assets\Scripts\Game\InsectEvent.cs" />
-     <Compile Include="Assets\Scripts\Game\MainProcedure.cs" />
      <Compile Include="Assets\Scripts\Game\Procedure.cs" />
      <Compile Include="Assets\Scripts\Game\ProcedureController.cs" />
      <Compile Include="Assets\Scripts\Game\StormEvent.cs" />
@@ -93,16 +92,21 @@
      <Compile Include="Assets\Scripts\InfoMgr.cs" />
      <Compile Include="Assets\Scripts\ShowEffect\BreatheEffect.cs" />
      <Compile Include="Assets\Scripts\ShowEffect\GeneralShowEffect.cs" />
+     <Compile Include="Assets\Scripts\ShowEffect\Line.cs" />
      <Compile Include="Assets\Scripts\ShowEffect\StartfirstEffect.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\TestScript\TestInfoDemo.cs" />
+     <Compile Include="Assets\UIEffect\UIEffect.cs" />
      <None Include="Assets\SDKs\DOTween\DOTween50.xml" />
      <None Include="Assets\Resources\Info\TeamMember.txt" />
      <None Include="Assets\SDKs\DOTween\DOTween46.xml" />
      <None Include="Assets\SDKs\DOTween\readme.txt" />
      <None Include="Assets\SDKs\JsonFx\Readme.txt" />
      <None Include="Assets\SDKs\DOTween\DOTween43.xml" />
+     <None Include="Assets\UIEffect\Readme.txt" />
+     <None Include="Assets\UIEffect\UI-Effect.shader" />
      <None Include="Assets\SDKs\JsonFx\License.txt" />
+     <None Include="Assets\UIEffect\UI-Effect.cginc" />
      <None Include="Assets\Resources\Info\Animal.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

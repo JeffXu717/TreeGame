@@ -1,17 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ShowEffect/StartfirstEffect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/MainProcedure.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/DataController.cs" Line="19" Column="30" />
-      <File FileName="Assets/Scripts/Game/GameController.cs" Line="51" Column="22" />
-      <File FileName="Assets/Scripts/Game/MainProcedure.cs" Line="37" Column="44" />
-      <File FileName="Assets/Scripts/Game/GameProcedure.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/Game/Drag/DragItem.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/Game/MainProcedure.cs" Line="1" Column="1" />
+      <File FileName="Assets/DropWater.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/StormEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Procedure.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/EventClass.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/InsectEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/DataController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/GameProcedure.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Info/Animal.txt" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Game/Drag/DragController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ShowEffect/BreatheEffect.cs" Line="15" Column="10" />
-      <File FileName="Assets/Scripts/ShowEffect/GeneralShowEffect.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Game/ProcedureController.cs" Line="5" Column="1" />
-      <File FileName="Assets/Scripts/ShowEffect/StartfirstEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game/Drag/DragItem.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
