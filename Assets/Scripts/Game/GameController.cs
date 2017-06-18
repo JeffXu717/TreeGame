@@ -7,6 +7,9 @@ public class GameController : MonoBehaviour {
 
 	public static GameController Instance;
 
+    //JeffXu
+    //标识是否从封面进入游戏
+    public bool IsFromCover = false;
 
 	public  Level level = Level.zero;
 	[HideInInspector]
